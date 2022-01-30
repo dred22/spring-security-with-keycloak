@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "695badad-9b40-d381-f9fd-76f0c1b33dbc",
+		"name": "eazyapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OpenId config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/auth/realms/eazybankdev/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"auth",
+						"realms",
+						"eazybankdev",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Token non UI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "eazybankapi",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "84de0180-4e0f-4172-b9b1-0376a01da18f",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/auth/realms/eazybankdev/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"auth",
+						"realms",
+						"eazybankdev",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "my account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkZS14aG1HbVlBTGN3dEo3dTdzLVF5blZGMFBpblVpOEtuNWpZYTQ5MDdRIn0.eyJleHAiOjE2NDM1NjU0NjYsImlhdCI6MTY0MzU2NTE2NiwianRpIjoiYjY5MTNmMzktMWE4Ny00YTljLTg1MzAtZGIxOTI1NDJmYzMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL2VhenliYW5rZGV2IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQ0Yzk4MjMwLTFhNzctNDk1ZS04NWM3LTVlOTFlYzEyZGM3ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVhenliYW5rYXBpIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1lYXp5YmFua2RldiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRJZCI6ImVhenliYW5rYXBpIiwiY2xpZW50SG9zdCI6IjE3Mi4yMy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lYXp5YmFua2FwaSIsImNsaWVudEFkZHJlc3MiOiIxNzIuMjMuMC4xIn0.P-lZLR83yC4eS-G6xAXOt5dcrmJHC5JlLk5oooqxP9VUxX_L9hFIyDT8w6Q9GRujUnPU9vlJeNxdMfezjb4ApliVAe6AwUonVlJ4q2VBcJ-goWwLEO4EJCMmwCvt09yIGQIwhq8NjNk_bpCULQIv7cQRUTeiCYrVgg0oaClHARs5AUP7GF1DfOjZNRdmwB5xaDsPu4_R0e_dRsXqD38wrtOwllkmfdIEOTG58WNFwV7dYpbb4PM0Q19Q4nPPsgx6aWH2yJjTpRgRc_MqhPKNWH6LO7VueVSbk6Vybl_yyFMFeSERxoLiXvdjhD1YPT0htcAMl6fvSoCoVM6RIbJbIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"accounts@eazybytes.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/myAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "my loans",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkZS14aG1HbVlBTGN3dEo3dTdzLVF5blZGMFBpblVpOEtuNWpZYTQ5MDdRIn0.eyJleHAiOjE2NDM1NjU0NjYsImlhdCI6MTY0MzU2NTE2NiwianRpIjoiYjY5MTNmMzktMWE4Ny00YTljLTg1MzAtZGIxOTI1NDJmYzMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL2VhenliYW5rZGV2IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjQ0Yzk4MjMwLTFhNzctNDk1ZS04NWM3LTVlOTFlYzEyZGM3ZSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVhenliYW5rYXBpIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsIkFETUlOIiwidW1hX2F1dGhvcml6YXRpb24iLCJVU0VSIiwiZGVmYXVsdC1yb2xlcy1lYXp5YmFua2RldiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJjbGllbnRJZCI6ImVhenliYW5rYXBpIiwiY2xpZW50SG9zdCI6IjE3Mi4yMy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lYXp5YmFua2FwaSIsImNsaWVudEFkZHJlc3MiOiIxNzIuMjMuMC4xIn0.P-lZLR83yC4eS-G6xAXOt5dcrmJHC5JlLk5oooqxP9VUxX_L9hFIyDT8w6Q9GRujUnPU9vlJeNxdMfezjb4ApliVAe6AwUonVlJ4q2VBcJ-goWwLEO4EJCMmwCvt09yIGQIwhq8NjNk_bpCULQIv7cQRUTeiCYrVgg0oaClHARs5AUP7GF1DfOjZNRdmwB5xaDsPu4_R0e_dRsXqD38wrtOwllkmfdIEOTG58WNFwV7dYpbb4PM0Q19Q4nPPsgx6aWH2yJjTpRgRc_MqhPKNWH6LO7VueVSbk6Vybl_yyFMFeSERxoLiXvdjhD1YPT0htcAMl6fvSoCoVM6RIbJbIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"accounts@eazybytes.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/myLoans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"myLoans"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autorization endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/auth/realms/eazybankdev/protocol/openid-connect/auth?client_id=eazyuiclient&response_type=code&scope=openid&redirect_uri=http://localhost:4200/sample&state=sdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"auth",
+						"realms",
+						"eazybankdev",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "eazyuiclient"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "scope",
+							"value": "openid"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:4200/sample"
+						},
+						{
+							"key": "state",
+							"value": "sdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Token for UI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "eazyuiclient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "472d4aee-f2f2-4c9d-a74d-d6be22d4d67b",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "e0668e7c-652f-4d1b-80ec-f0713e88b5da.dc5952bc-6b3f-47d4-a863-fdb44b501da1.c7e8b4bf-4545-4904-a465-622ca5874ba9",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:4200/sample",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/auth/realms/eazybankdev/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"auth",
+						"realms",
+						"eazybankdev",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
